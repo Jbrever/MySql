@@ -30,4 +30,20 @@ const allUser = (req,resp)=>{
  }
 }
 
-module.exports = {countData , allUser}
+const userEdit =(req,resp)=>{
+    const id = req.params.id
+    console.log(id)
+    let q = `select * from one where id='${id}'` 
+    connection.query(q,(err,result) =>{
+        let data = result[0]
+        console.log(data)
+        resp.render('edit',{data}) 
+    })
+  
+}
+
+const patchUser =(req,resp)=>{
+     let id = req.body
+     console.log('patch data-:',id)
+}
+module.exports = {countData , allUser,userEdit , patchUser}

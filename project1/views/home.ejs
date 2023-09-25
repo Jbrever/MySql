@@ -6,12 +6,26 @@
     <title><%= title %></title>
 </head>
 <body>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>password</th>    
+        </tr>
+    
+      <%for(let res of result) { %>
+            <tr>
+                <td><%= res.id %></td>
+                <td><%= res.name %></td>
+                <td><%= res.password %></td>
+                <td><form action="user/edit/<%= res.id%>" method="get">
+                    <button>edit</button>
+                </form></td>
+            </tr>
+       <% } %>
+    </table>
     <%for(let res of result) { %>
-        <div>
-            <h1><%= res.name %></h1>
-            <h2><%= res.id %></h2>
-        </div>
-         <br>
+     
     <%}%>
 </body>
 </html>
