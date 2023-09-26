@@ -12,7 +12,7 @@
             <th>name</th>
             <th>password</th>    
         </tr>
-    
+        ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
       <%for(let res of result) { %>
             <tr>
                 <td><%= res.id %></td>
